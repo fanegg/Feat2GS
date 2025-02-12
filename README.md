@@ -70,14 +70,14 @@ build_dataset/1_create_feat2gs_dataset.py ## use dataset_split.json to create da
 
 2. Evaluate Visual Foundation Models:
 
-  | Step | Description |
+  | Step | Description (link to command) |
   |------|-------------|
-  | (1)  | DUSt3R initialization & Feature extraction |
-  | (2)  | Readout 3DGS from features & Jointly optimize pose |
-  | (3)  | Test pose initialization |
-  | (4)  | Render test view for evaluation |
-  | (5)  | Metric |
-  | (Optional)  | Render video with generated trajectory |
+  | (1)  | [DUSt3R initialization & Feature extraction](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L245-L250) |
+  | (2)  | [Readout 3DGS from features & Jointly optimize pose](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L253-L262) |
+  | (3)  | [Test pose initialization](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L265-L270) |
+  | (4)  | [Render test view for evaluation](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L273-L282) |
+  | (5)  | [Metric](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L298-L301) |
+  | (Optional)  | [Render video with generated trajectory](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L304-L315) |
 
 ```bash
   # Run evaluation for all dataset, all VFM features, all probing mode
@@ -86,16 +86,21 @@ build_dataset/1_create_feat2gs_dataset.py ## use dataset_split.json to create da
   # Run evaluation for a single scene, DINO feature, Geometry mode
   bash scripts/run_feat2gs_eval.sh
 ```
-
+> [!NOTE]
+> To run experiments in parallel, we added a **GPU lock** feature to ensure only one evaluation experiment runs per GPU. Once an experiment finishes, the GPU is automatically unlocked. **If interrupted by `Ctrl+C`, the GPU won’t be unlocked automatically.** To fix this, manually delete the `.lock` file in the `LOCK_DIR`. To disable this feature, comment out these lines in the script:
+    [L4-L5](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L4-L5),
+    [L9-L22](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L9-L22),
+    [L223-L233](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L223-L233),
+    [L330-L331](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L330-L331),
 
   | Config | Operation |
   |--------|-----------------|
-  | GPU | Edit in `<AVAILABLE_GPUS>` |
-  | Dataset | Edit in `<SCENES[$Dataset]>` |
-  | Scene | Edit in `<SCENES_$Dataset>` |
-  | Visual Foundation Model | Edit in `<FEATURES>` |
-  | Probing Mode | Edit in `<MODELS>` |
-  | Inference-only Mode | Comment out STEP (3)(4)(5) in `execute_command` |
+  | GPU | Edit in [`<AVAILABLE_GPUS>`](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L7) |
+  | Dataset | Edit in [`<SCENES[$Dataset]>`](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L105-L111) |
+  | Scene | Edit in [`<SCENES_$Dataset>`](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L31-L99) |
+  | Visual Foundation Model | Edit in [`<FEATURES>`](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L120-L162) |
+  | Probing Mode | Edit in [`<MODELS>`](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L181-L188) |
+  | Inference-only Mode | Comment out STEP (3)(4)(5) in [`execute_command`](https://github.com/fanegg/Feat2GS/blob/main/scripts/run_feat2gs_eval_parallel.sh#L325-L327) |
 
 ```bash
   # Evaluate Visual Foundation Models on DTU dataset
