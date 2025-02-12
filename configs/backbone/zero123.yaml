@@ -1,0 +1,5 @@
+model:
+  _target_: evals.models.zero123.Zero123
+  time_step: 1
+  layer: 1
+  output: dense

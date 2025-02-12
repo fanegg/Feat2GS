@@ -1,0 +1,4 @@
+model:
+  _target_: evals.models.radio.RADIO
+  version: radio_v2
+  output: dense

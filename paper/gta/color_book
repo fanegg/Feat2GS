@@ -1,0 +1,3 @@
+    color_low: Tuple[float, float, float] = (1.0, 0.816, 0.816),  # #ffd0d0
+    color_mid: Tuple[float, float, float] = (1.0, 0.941, 0.816),  # #fff0d0
+    color_high: Tuple[float, float, float] = (0.565, 0.753, 0.376), # #90c060
