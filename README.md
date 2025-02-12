@@ -80,10 +80,10 @@ cd ../../../../../../
   | (Optional)  | [Render video with generated trajectory](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L304-L315) |
 
 ```bash
-  # Run evaluation for all dataset, all VFM features, all probing mode
+  # Run evaluation for all datasets, all VFM features, all probing modes
   bash scripts/run_feat2gs_eval_parallel.sh
 
-  # Run evaluation for a single scene, DINO feature, Geometry mode
+  # (Example) Run evaluation for a single scene, DINO feature, Geometry mode
   bash scripts/run_feat2gs_eval.sh
 ```
 > [!NOTE]
