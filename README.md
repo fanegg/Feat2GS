@@ -20,6 +20,8 @@ This repository is the official implementation of Feat2GS, a unified framework t
 </div>
 <br>
 
+https://github.com/user-attachments/assets/07ebb8e1-6001-47bf-bf74-984b0032cc17
+
 ## Get Started
 
 ### Installation
@@ -143,6 +145,7 @@ gradio demo.py
   - Left button: Rotate
   - Scroll wheel: Zoom
   - Right button: Pan
+
 
 ## Acknowledgement
 
