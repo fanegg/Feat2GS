@@ -61,11 +61,11 @@ cd ../../../../../../
   cd <data_root>/Feat2GS/
 ```
 
-If you want to build custom datasets, please follow and edit:
-```
-build_dataset/0_create_json.py ## create dataset_split.json to split train/test set
-build_dataset/1_create_feat2gs_dataset.py ## use dataset_split.json to create dataset
-```
+> If you want to build custom datasets, please follow and edit:
+> ```
+> build_dataset/0_create_json.py ## create dataset_split.json to split train/test set
+> build_dataset/1_create_feat2gs_dataset.py ## use dataset_split.json to create dataset
+> ```
 
 
 2. Evaluate Visual Foundation Models:
