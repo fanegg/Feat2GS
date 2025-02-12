@@ -2,7 +2,7 @@
 
 GPU_ID=7
 OUTPUT_ROOT="/home/chenyue/output/Feat2gs/"
-DATA_ROOT_DIR="/home/chenyue/dataset/Feat2GS_Dataset_TEST"
+DATA_ROOT_DIR="/home/chenyue/dataset/Feat2GS_Dataset"
 DATASET_SPLIT_JSON="${DATA_ROOT_DIR}/dataset_split.json"
 
 declare -A SCENES
@@ -158,7 +158,7 @@ run_process() {
     # BASE_FOLDER must be Absolute path
     BASE_FOLDER=${DATA_ROOT_DIR}/${DATASET}/${SCENE}
     SOURCE_PATH=${BASE_FOLDER}/${N_VIEW}_views
-    MODEL_PATH=${OUTPUT_ROOT}/output/eval_rerun/${DATASET}/${SCENE}/${N_VIEW}_views/${METHOD}-${MODEL}/${POINTMAP}/${FEATURE}/
+    MODEL_PATH=${OUTPUT_ROOT}/output/eval/${DATASET}/${SCENE}/${N_VIEW}_views/${METHOD}-${MODEL}/${POINTMAP}/${FEATURE}/
 
     local CMD_PREFIX="CUDA_VISIBLE_DEVICES=${GPU_ID} python -W ignore "
 
