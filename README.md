@@ -179,4 +179,4 @@ If you find our work useful in your research, please consider giving a star :sta
 
 ## Contact
 
-For feedback, questions, or press inquiries please contact [Yue Chen](faneggchen@gmail.com) and [Xingyu Chen](roverxingyu@gmail.com)
+For feedback, questions, or press inquiries please contact [Yue Chen](mailto:faneggchen@gmail.com) and [Xingyu Chen](mailto:roverxingyu@gmail.com).
