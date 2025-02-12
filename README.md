@@ -87,11 +87,11 @@ build_dataset/1_create_feat2gs_dataset.py ## use dataset_split.json to create da
   bash scripts/run_feat2gs_eval.sh
 ```
 > [!NOTE]
-> To run experiments in parallel, we added a **GPU lock** feature to ensure only one evaluation experiment runs per GPU. Once an experiment finishes, the GPU is automatically unlocked. **If interrupted by `Ctrl+C`, the GPU won’t be unlocked automatically.** To fix this, manually delete the `.lock` file in the `LOCK_DIR`. To disable this feature, comment out these lines in the script:
+> To run experiments in parallel, we added a **GPU lock** feature to ensure only one evaluation experiment runs per GPU. Once an experiment finishes, the GPU is automatically unlocked. **If interrupted by `Ctrl+C`, the GPU won’t be unlocked automatically.** To fix this, manually delete the `.lock` files in your `LOCK_DIR`. To disable this feature, comment out these lines in the script:
     [L4-L5](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L4-L5),
     [L9-L22](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L9-L22),
     [L223-L233](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L223-L233),
-    [L330-L331](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L330-L331),
+    [L330-L331](https://github.com/fanegg/Feat2GS/blob/b8eadaa54549d34420eba61b388548b8ec8e7325/scripts/run_feat2gs_eval_parallel.sh#L330-L331).
 
   | Config | Operation |
   |--------|-----------------|
