@@ -1,0 +1,33 @@
+conda activate wildgaussian
+cd Feat2GS/submodules/mast3r/
+
+CUDA_VISIBLE_DEVICES=6 python3 demo.py \
+    --weights checkpoints/MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric.pth \
+    --local_network --server_port 7002 
+
+ --model_name MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric
+
+# Use --weights to load a checkpoint from a local file, eg --weights checkpoints/MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric.pth
+# Use --local_network to make it accessible on the local network, or --server_name to specify the url manually
+# Use --server_port to change the port, by default it will search for an available port starting at 7860
+# Use --device to use a different device, by default it's "cuda"
+
+
+CUDA_VISIBLE_DEVICES=7 python3 demo_dust3r_ga.py \
+    --weights checkpoints/DUSt3R_ViTLarge_BaseDecoder_512_dpt.pth \
+    --local_network --server_port 7003 \
+    --tmp_dir /home/chenyue/tmp/temp/
+
+
+--model_name DUSt3R_ViTLarge_BaseDecoder_512_dpt
+
+# Use --weights to load a checkpoint from a local file, eg --weights checkpoints/DUSt3R_ViTLarge_BaseDecoder_512_dpt.pth
+# Use --image_size to select the correct resolution for the selected checkpoint. 512 (default) or 224
+# Use --local_network to make it accessible on the local network, or --server_name to specify the url manually
+# Use --server_port to change the port, by default it will search for an available port starting at 7860
+# Use --device to use a different device, by default it's "cuda"
+
+python colmap_from_mast3r.py \
+    --image_dir /home/chenyue/Feat2GS/data/casual/turtle/3_views/images \
+    --save_dir /home/chenyue/Feat2GS/data/casual/turtle/3_views \
+    --model_path /home/chenyue/Feat2GS/submodules/mast3r/checkpoints/MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric.pth
