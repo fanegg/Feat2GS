@@ -1,6 +1,6 @@
 #! /bin/bash
 
-GPU_ID=7
+GPU_ID=0
 OUTPUT_ROOT="/home/chenyue/output/Feat2gs/"
 DATA_ROOT_DIR="/home/chenyue/dataset/Feat2GS_Dataset"
 DATASET_SPLIT_JSON="${DATA_ROOT_DIR}/dataset_split.json"
