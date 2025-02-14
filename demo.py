@@ -404,15 +404,15 @@ with demo:
     render_run.click(run_render, inputs=[dust3r_state, feat2gs_state, cam_traj], outputs=[output_video])
 
 
-    gr.Examples(
-        examples=[
-            ["./assets/example/plushies/1.jpg",]
-        ],
-        inputs=[input_path],
-        outputs=[dust3r_model, feat_image, output_model, output_video],
-        fn=lambda x: process_example(inputfiles=None, input_path=x),
-        cache_examples=True,
-        label='Examples'
-    )
+    # gr.Examples(
+    #     examples=[
+    #         "plushies",
+    #     ],
+    #     inputs=[input_path],
+    #     outputs=[dust3r_model, feat_image, output_model, output_video],
+    #     fn=lambda x: process_example(inputfiles=None, input_path=x),
+    #     cache_examples=True,
+    #     label='Examples'
+    # )
 
 demo.launch(server_name="0.0.0.0", share=False)
