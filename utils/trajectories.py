@@ -3,9 +3,10 @@ import roma
 import torch
 import torch.nn.functional as F
 
+from typing import Optional, Union
 
 def rt_to_mat4(
-    R: torch.Tensor, t: torch.Tensor, s: torch.Tensor | None = None
+    R: torch.Tensor, t: torch.Tensor, s: Optional[torch.Tensor] = None
 ) -> torch.Tensor:
     """
     Args:
@@ -172,7 +173,7 @@ def get_spiral_w2cs(
     lookat: torch.Tensor,
     up: torch.Tensor,
     num_frames: int,
-    rads: float | torch.Tensor,
+    rads: Union[float, torch.Tensor],
     zrate: float,
     rots: int,
     **_,

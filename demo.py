@@ -43,7 +43,7 @@ if not os.path.exists(tempfile.tempdir):
 def get_dust3r_args_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument("--image_size", type=int, default=512, choices=[512, 224], help="image size")
-    parser.add_argument("--model_path", type=str, default="submodules/mast3r/checkpoints/DUSt3R_ViTLarge_BaseDecoder_512_dpt.pth", help="path to the model weights")
+    parser.add_argument("--model_path", type=str, default="submodules/mast3r/checkpoints/DUSt3R_ViTLarge_BaseDecoder_512_dpt.pth", help="path to the model weights")    # hf: naver/DUSt3R_ViTLarge_BaseDecoder_512_dpt
     parser.add_argument("--device", type=str, default='cuda', help="pytorch device")
     parser.add_argument("--batch_size", type=int, default=1)
     parser.add_argument("--schedule", type=str, default='linear')
@@ -404,15 +404,15 @@ with demo:
     render_run.click(run_render, inputs=[dust3r_state, feat2gs_state, cam_traj], outputs=[output_video])
 
 
-    # gr.Examples(
-    #     examples=[
-    #         "plushies",
-    #     ],
-    #     inputs=[input_path],
-    #     outputs=[dust3r_model, feat_image, output_model, output_video],
-    #     fn=lambda x: process_example(inputfiles=None, input_path=x),
-    #     cache_examples=True,
-    #     label='Examples'
-    # )
+    gr.Examples(
+        examples=[
+            ["./assets/example/plushies/1.jpg",]
+        ],
+        inputs=[input_path],
+        outputs=[dust3r_model, feat_image, output_model, output_video],
+        fn=lambda x: process_example(inputfiles=None, input_path=x),
+        cache_examples=True,
+        label='Examples'
+    )
 
-demo.launch(server_name="0.0.0.0", share=True)
+demo.launch(server_name="0.0.0.0", share=False)

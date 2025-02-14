@@ -39,7 +39,7 @@ cd ../../
 ```bash
 conda create -n feat2gs python=3.11 cmake=3.14.0
 conda activate feat2gs
-conda install pytorch torchvision pytorch-cuda=12.1 -c pytorch -c nvidia  # use the correct version of cuda for your system
+pip install "torch==2.5.1" "torchvision==0.20.1" "numpy<2" --index-url https://download.pytorch.org/whl/cu121  # use the correct version of cuda for your system
 cd Feat2GS/
 pip install -r requirements.txt
 pip install submodules/simple-knn

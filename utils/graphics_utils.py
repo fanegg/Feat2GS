@@ -12,7 +12,7 @@
 import torch
 import math
 import numpy as np
-from typing import NamedTuple
+from typing import NamedTuple, Union
 
 import torch.nn.functional as F
 from torch import Tensor
@@ -112,8 +112,8 @@ def resize_render(view, size=None):
     return view
 
 def make_video_divisble(
-    video: torch.Tensor | np.ndarray, block_size=16
-) -> torch.Tensor | np.ndarray:
+    video: Union[torch.Tensor, np.ndarray], block_size=16
+) -> Union[torch.Tensor, np.ndarray]:
     H, W = video.shape[1:3]
     H_new = H - H % block_size
     W_new = W - W % block_size
