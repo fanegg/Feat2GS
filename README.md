@@ -114,7 +114,7 @@ cd ../../../../../../
 ```bash
   # If render depth/normal, set RENDER_DEPTH_NORMAL=true
   # Set type of generated trjectory by editing <TRAJ_SCENES>
-  bash bash scripts/run_video_render.sh
+  bash scripts/run_video_render.sh
 
   # Render video on DTU dataset
   bash scripts/run_video_render_dtu.sh

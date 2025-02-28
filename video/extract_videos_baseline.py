@@ -105,7 +105,7 @@ def concat_videos_horizontally(video1_path, video2_path, output_path):
         
         # Add labels
         margin = 20
-        add_text_with_background(combined_frame, "Our baseline", (margin, margin), False)
+        add_text_with_background(combined_frame, "Ours", (margin, margin), False)
         add_text_with_background(combined_frame, "InstantSplat", (width1 + width2 - margin, margin), True)
         
         # Convert to av.VideoFrame and encode
@@ -181,9 +181,9 @@ if __name__ == "__main__":
     OUTPUT_DIR = "/home/chenyue/output/Feat2gs/video_baseline"
 
     pairs = {
-        "lemniscate": {
-            "Tanks": ["Family"]
-        },
+        # "lemniscate": {
+        #     "Tanks": ["Family"]
+        # },
         "arc": {
             "Infer": ["plushies"],
         },
