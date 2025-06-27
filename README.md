@@ -168,11 +168,12 @@ This work is built on many amazing research works and open-source projects, than
 If you find our work useful in your research, please consider giving a star :star: and citing the following paper :pencil:.
 
 ```bibTeX
-@article{chen2024feat2gs,
-  title={Feat2GS: Probing Visual Foundation Models with Gaussian Splatting},
+@inproceedings{chen2025feat2gs,
+  title={Feat2gs: Probing visual foundation models with gaussian splatting},
   author={Chen, Yue and Chen, Xingyu and Chen, Anpei and Pons-Moll, Gerard and Xiu, Yuliang},
-  journal={arXiv preprint arXiv:2412.09606},
-  year={2024}
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={6348--6361},
+  year={2025}
 }
 ```
 
