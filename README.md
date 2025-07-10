@@ -15,11 +15,16 @@
 </h5>
 
 <div align="center">
-This repository is the official implementation of Feat2GS, a unified framework to probe “texture and geometry awareness” of visual foundation models. Novel view synthesis serves as an effective proxy for 3D evaluation.
+This repository is the official implementation of Feat2GS, a unified framework to probe “texturel and geometry awareness” of visual foundation models. Novel view synthesis serves as an effective proxy for 3D evaluation.
 </div>
 <br>
 
 https://github.com/user-attachments/assets/07ebb8e1-6001-47bf-bf74-984b0032cc17
+
+
+## Updates
+
+- [July 10, 2025] Add a new evaluation of VGGT encoder and decoder features. See the results [here](assets/Feat2GS_Benchmark.png).
 
 ## Get Started
 
@@ -163,6 +168,7 @@ This work is built on many amazing research works and open-source projects, than
 - [FeatUp](https://github.com/mhamilton723/FeatUp)
 - [Shape of Motion](https://github.com/vye16/shape-of-motion/)
 - [Splatt3R](https://github.com/btsmart/splatt3r)
+- [VGGT](https://github.com/facebookresearch/vggt)
 
 ## Citation
 If you find our work useful in your research, please consider giving a star :star: and citing the following paper :pencil:.

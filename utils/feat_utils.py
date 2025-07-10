@@ -18,7 +18,6 @@ from mast3r.cloud_opt.tsdf_optimizer import TSDFPostProcess
 from hydra.utils import instantiate
 from omegaconf import OmegaConf
 
-
 class TorchPCA(object):
 
     def __init__(self, n_components):
@@ -561,9 +560,6 @@ class FeatureExtractor:
             assert self.vis_key == 'decfeat', f"Expected vis_key to be 'decfeat', but got {self.vis_key}"
             self.vis_decfeat(kw['pairs'], output=output)
 
-        # del model, output
-        # torch.cuda.empty_cache()
-
         return scene.stacked_feat
 
     def get_mast3r_feat(self, **kw):
@@ -580,11 +576,20 @@ class FeatureExtractor:
             assert self.vis_key in ['decfeat', 'desc'], f"Expected vis_key to be 'decfeat' or 'desc', but got {self.vis_key}"
             self.vis_decfeat(kw['pairs'], model=model)
 
-        # del model
-        # torch.cuda.empty_cache()
-
         return scene.stacked_feat
 
+    def get_vggt_feat(self, feat_type, **kw):
+
+        image_names = [os.path.join(self.img_base_path, "images", n) for n in kw['train_img_list']]
+        cfg = OmegaConf.load(f"configs/backbone/{feat_type}.yaml")
+        model = instantiate(cfg.model, device=self.device)
+
+        with torch.no_grad():
+            feats = model(image_names)
+
+        return feats
+    
+    
     def get_feat(self, feat_type):
         """
         Get features using Probe3D.
@@ -601,9 +606,6 @@ class FeatureExtractor:
         
         with torch.no_grad():
             feats = model(image_norm).permute(0, 2, 3, 1)
-
-        # del model
-        # torch.cuda.empty_cache()
 
         return feats
 
@@ -692,6 +694,8 @@ class FeatureExtractor:
                 feats = kw['scene'].stacked_feat
             elif feat_type in ['dust3r', 'mast3r']:
                 feats = getattr(self, f"get_{feat_type}_feat")(**kw)
+            elif 'vggt' in feat_type:
+                feats = self.get_vggt_feat(feat_type, **kw)
             elif feat_type in ['iuv', 'iuvrgb']:
                 feats = getattr(self, f"get_{feat_type}")()
                 feat_dim = None

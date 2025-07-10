@@ -12,6 +12,8 @@ OUT_PATH = Path("tables")
 caption = "GTA perSCENE"
 
 FEATURES = (
+    VGGTE,
+    VGGTD,
     DUST3R,
     MAST3R,
     MIDAS,
@@ -106,6 +108,7 @@ if __name__ == "__main__":
             [metric.order for metric in METRICS] * len(row_scenes) * len(METHODS),
             multi_headers=multi_headers,
             model_headers=model_headers,
+            # use_colors=False,
         )
 
         chunks.append(table)

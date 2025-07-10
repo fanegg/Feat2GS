@@ -13,6 +13,8 @@ caption = "GTA"
 USE_COLORS = True #True
 
 FEATURES = (
+    VGGTE,
+    VGGTD,
     DUST3R,
     MAST3R,
     MIDAS,

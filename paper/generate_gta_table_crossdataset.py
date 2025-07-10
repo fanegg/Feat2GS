@@ -14,6 +14,8 @@ caption = "GTA cross dataset"
 USE_COLORS = True   #False
 
 FEATURES = (
+    VGGTE,
+    VGGTD,
     DUST3R,
     MAST3R,
     MIDAS,

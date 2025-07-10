@@ -1,0 +1,3 @@
+model:
+  _target_: evals.models.vggt.VGGT_1B
+  feat_from: "decoder"

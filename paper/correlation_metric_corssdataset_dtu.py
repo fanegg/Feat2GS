@@ -65,7 +65,7 @@ if __name__ == "__main__":
                 value = grouped[method.tag][metric.tag][feature.tag]
                 # if metric.tag == METRIC_LPIPS.tag:
                 if metric.order == -1:
-                    value = -value  # 取反LPIPS的值
+                    value = -value  # negate the value of the metric
                 # rows[f"{metric.full_name}-{method_name.group(1)}"].append(value)
                 rows[f"{metric.full_name}"].append(value)
                 metric_groups[metric.full_name] = metric.group

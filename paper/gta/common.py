@@ -53,6 +53,8 @@ class Scene(Feature):
                 object.__setattr__(self, 'n_views', self.dataset.n_views)
 
 
+VGGTE = Feature("vggt_e", "VGGT_{enc}")
+VGGTD = Feature("vggt_d", "VGGT_{dec}")
 DUST3R = Feature("dust3r", "DUSt3R")
 MAST3R = Feature("mast3r", "MASt3R")
 MIDAS = Feature("midas_l16", "MiDaS")

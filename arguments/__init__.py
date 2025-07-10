@@ -67,6 +67,8 @@ class ModelParams(ParamGroup):
             'mae_b16': 768,
             'midas_l16': 1024,
             'sam_base': 768,
+            'vggt_d': 2048,
+            'vggt_e': 1024,
             # 'dino16': 384,
             # 'dinov2': 384,
             # 'clip': 512,
