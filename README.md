@@ -24,7 +24,7 @@ https://github.com/user-attachments/assets/07ebb8e1-6001-47bf-bf74-984b0032cc17
 
 ## Updates
 
-- [July 10, 2025] Add a new evaluation of VGGT encoder and decoder features. See the results [here](assets/Feat2GS_Benchmark.png).
+- [July 10, 2025] Add a new evaluation of VGGT encoder and decoder features. See the results [here](assets/Feat2GS_Benchmark.pdf).
 
 ## Get Started
 
